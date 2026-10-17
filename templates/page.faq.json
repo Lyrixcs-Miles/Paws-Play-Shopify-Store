@@ -3,7 +3,7 @@
     "questions": {
       "type": "collapsible-content",
       "settings": {
-        "caption": "Here to help",
+        "caption": "Tap a question to see the answer",
         "heading": "Frequently asked questions",
         "heading_size": "h1",
         "heading_alignment": "center",
