@@ -5,7 +5,9 @@
     "footer": {
       "type": "pp-footer",
       "settings": {
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "shop_menu": "footer-shop",
+        "help_menu": "footer"
       }
     }
   },
