@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {},
+      "blocks": {
+        "block0": {
+          "type": "product",
+          "settings": {
+            "label": "Metal bowl"
+          }
+        },
+        "block1": {
+          "type": "product",
+          "settings": {
+            "label": "The leash"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1"
+      ]
+    },
+    "categories": {
+      "type": "categories",
+      "settings": {
+        "eyebrow": "Find the perfect products",
+        "heading": "Shop by Category"
+      },
+      "blocks": {
+        "block0": {
+          "type": "category",
+          "settings": {
+            "title": "Dry & wet food"
+          }
+        },
+        "block1": {
+          "type": "category",
+          "settings": {
+            "title": "Toys for pets"
+          }
+        },
+        "block2": {
+          "type": "category",
+          "settings": {
+            "title": "Walking accessories"
+          }
+        },
+        "block3": {
+          "type": "category",
+          "settings": {
+            "title": "Pet supplies"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1",
+        "block2",
+        "block3"
+      ]
+    },
+    "promotions": {
+      "type": "promotions",
+      "settings": {},
+      "blocks": {
+        "block0": {
+          "type": "banner",
+          "settings": {
+            "title": "New Collection of Beds",
+            "word": "new",
+            "label": "Home away from home"
+          }
+        },
+        "block1": {
+          "type": "banner",
+          "settings": {
+            "title": "Premium Walking Accessories",
+            "word": "play",
+            "label": "Active lifestyle"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1"
+      ]
+    },
+    "arrivals": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Find the perfect products",
+        "heading": "Our Latest Arrivals"
+      }
+    },
+    "care": {
+      "type": "care-cards",
+      "settings": {
+        "eyebrow": "Pet care in action",
+        "heading": "Trusted by Pet Owners Who Want the Very Best"
+      },
+      "blocks": {
+        "block0": {
+          "type": "card",
+          "settings": {
+            "title": "Pet Nutrition"
+          }
+        },
+        "block1": {
+          "type": "card",
+          "settings": {
+            "title": "Cat Essentials"
+          }
+        },
+        "block2": {
+          "type": "card",
+          "settings": {
+            "title": "Pet Wellness"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1",
+        "block2"
+      ]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "eyebrow": "Happy customers",
+        "heading": "What Clients Say"
+      },
+      "blocks": {
+        "block0": {
+          "type": "quote",
+          "settings": {
+            "quote": "Thoughtfully chosen essentials for pets and the people who love them.",
+            "author": "Paws & Play"
+          }
+        }
+      },
+      "block_order": [
+        "block0"
+      ]
+    },
+    "blog": {
+      "type": "featured-blog",
+      "settings": {
+        "eyebrow": "Explore our blog",
+        "heading": "Our Latest News"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "promotions",
+    "arrivals",
+    "care",
+    "testimonials",
+    "blog"
+  ]
+}

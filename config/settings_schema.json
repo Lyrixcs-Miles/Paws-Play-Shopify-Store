@@ -1,0 +1,49 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Paws & Play",
+    "theme_version": "1.0.0",
+    "theme_author": "Paws & Play",
+    "theme_documentation_url": "https://help.shopify.com/en/manual/online-store/themes",
+    "theme_support_url": "https://help.shopify.com/en/manual/online-store/themes"
+  },
+  {
+    "name": "Brand and colors",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "color",
+        "id": "brand_color",
+        "label": "Accent color",
+        "default": "#8d291b"
+      },
+      {
+        "type": "color",
+        "id": "footer_color",
+        "label": "Footer color",
+        "default": "#35221d"
+      },
+      {
+        "type": "color",
+        "id": "cream_color",
+        "label": "Cream background",
+        "default": "#e9e6dd"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#292823"
+      }
+    ]
+  }
+]

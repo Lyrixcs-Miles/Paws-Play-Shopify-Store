@@ -1,0 +1,30 @@
+<section><div class="container"><div class="center"><span class="tag">{{ section.settings.eyebrow | escape }}</span></div><h2 class="section-title">{{ section.settings.heading | escape }}</h2><div class="blog-grid">{% for article in section.settings.blog.articles limit: 3 %}{% render 'article-card', article: article %}{% else %}{% if request.design_mode %}<p>{{ 'general.choose_a_blog_in_the_theme_editor_to_show_your_latest_posts' | t }}</p>{% endif %}{% endfor %}</div>{% if section.settings.blog != blank %}<div class="center-btn"><a class="btn btn-brand" href="{{ section.settings.blog.url }}">{{ 'general.read_all_news' | t }}</a></div>{% endif %}</div></section>
+{% schema %}
+{
+  "name": "Latest blog posts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small label",
+      "default": "Made for happy pets"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Latest News"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest blog posts"
+    }
+  ]
+}
+{% endschema %}

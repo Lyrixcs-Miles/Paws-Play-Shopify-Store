@@ -1,0 +1,66 @@
+<section class="promotions-section"><div class="container promo-grid">{% for block in section.blocks %}<div class="promo" {{ block.shopify_attributes }}><span class="promo-word" aria-hidden="true">{{ block.settings.word | escape }}</span>{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1400 | image_tag: class: 'editorial-photo', loading: 'lazy' }}{% else %}{% if forloop.first %}<img src="{{ 'cat.jpg' | asset_url }}" alt="Ginger cat" class="editorial-photo" width="1000" height="1000" loading="lazy">{% else %}<img src="{{ 'dog.jpg' | asset_url }}" alt="Golden retriever" class="editorial-photo" width="1000" height="1000" loading="lazy">{% endif %}{% endif %}<div class="promo-overlay"><div><span class="tag">{{ block.settings.label | escape }}</span><h2>{{ block.settings.title | escape }}</h2></div><a href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ 'general.explore_products' | t }} →</a></div></div>{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Promotional banners",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "word",
+          "label": "Background word",
+          "default": "new"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Small label",
+          "default": "Home away from home"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "New collection of beds"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Promotional banners",
+      "blocks": [
+        {
+          "type": "banner",
+          "settings": {
+            "title": "New Collection of Beds",
+            "word": "new"
+          }
+        },
+        {
+          "type": "banner",
+          "settings": {
+            "title": "Premium Walking Accessories",
+            "label": "Active lifestyle",
+            "word": "play"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

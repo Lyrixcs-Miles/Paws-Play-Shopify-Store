@@ -1,0 +1,6 @@
+{% doc %}
+Renders a product card with Shopify price and availability.
+@param {product} product - Product to display
+@param {boolean} [hero] - Use compact hero styling
+{% enddoc %}
+{% if product != blank %}<article class="product{% if hero %} hero-card{% endif %}"><a href="{{ product.url }}"><div class="img">{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | image_tag: widths: '180, 300, 450, 600', sizes: '(max-width: 600px) 45vw, 25vw', class: 'product-art', loading: 'lazy' }}{% else %}{{ 'product-1' | placeholder_svg_tag: 'product-art' }}{% endif %}</div></a><div class="product-info"><div><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><div class="price">{% if product.price_varies %}{{ 'general.from' | t }}{% endif %} {{ product.price | money }}{% if product.compare_at_price > product.price %} <s>{{ product.compare_at_price | money }}</s>{% endif %}</div>{% unless product.available %}<small>{{ 'general.sold_out' | t }}</small>{% endunless %}</div><a class="cart-btn" href="{{ product.url }}" aria-label="{{ 'general.view_product' | t: product: product.title | escape }}">↗</a></div></article>{% endif %}

@@ -1,0 +1,5 @@
+{% doc %}
+Renders an article card.
+@param {article} article - Article to display
+{% enddoc %}
+<article class="news-card"><a href="{{ article.url }}">{% if article.image %}{{ article.image | image_url: width: 800 | image_tag: widths: '360, 540, 800', sizes: '(max-width: 600px) 100vw, 33vw', class: 'news-photo', loading: 'lazy' }}{% else %}{{ 'image' | placeholder_svg_tag: 'news-photo' }}{% endif %}</a>{% if article.tags.first %}<span class="label">{{ article.tags.first | escape }}</span>{% endif %}<div class="date">{{ article.published_at | date: format: 'date' }}</div><h3><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><a class="more" href="{{ article.url }}">{{ 'general.read_more' | t }} →</a></article>

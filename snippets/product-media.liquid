@@ -1,0 +1,6 @@
+{% doc %}
+Renders a Shopify product media object.
+@param {media} media - Product media to render
+@param {boolean} [eager] - Prioritize the main product image
+{% enddoc %}
+{% assign image_loading = 'lazy' %}{% assign image_priority = 'auto' %}{% if eager %}{% assign image_loading = 'eager' %}{% assign image_priority = 'high' %}{% endif %}{% case media.media_type %}{% when 'image' %}{{ media.preview_image | image_url: width: 1400 | image_tag: widths: '400, 700, 1000, 1400', sizes: '(max-width: 899px) 100vw, 50vw', loading: image_loading, fetchpriority: image_priority }}{% when 'video' %}{{ media | video_tag: controls: true, preload: 'metadata', image_size: '900x' }}{% when 'external_video' %}{{ media | external_video_tag: loading: 'lazy' }}{% when 'model' %}{{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}{% endcase %}

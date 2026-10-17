@@ -1,0 +1,25 @@
+<section><div class="container page-content"><h2 class="section-title">{{ section.settings.heading | escape }}</h2><div class="rte">{{ section.settings.text }}</div></div></section>
+{% schema %}
+{
+  "name": "Rich text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A little more about us"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Content",
+      "default": "<p>Share your story with your customers.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text"
+    }
+  ]
+}
+{% endschema %}

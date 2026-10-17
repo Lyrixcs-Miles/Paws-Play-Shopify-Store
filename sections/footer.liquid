@@ -1,0 +1,46 @@
+<footer><div class="container"><div class="footer-top"><a class="logo" href="{{ routes.root_url }}">{% render 'brand' %}</a><div class="slogan">{{ section.settings.slogan | escape }}</div></div><div class="footer-cols"><div><h2 class="footer-heading">{{ 'general.stay_in_the_loop' | t }}</h2>
+{% assign newsletter_id = 'Newsletter-' | append: section.id %}{% form 'customer', id: newsletter_id, class: 'subscribe' %}<input type="hidden" name="contact[tags]" value="newsletter"><label class="visually-hidden" for="Email-{{ section.id }}">{{ 'general.email_address' | t }}</label><input id="Email-{{ section.id }}" type="email" name="contact[email]" placeholder="{{ 'general.email_address' | t }}" autocomplete="email" required><button type="submit" aria-label="{{ 'general.subscribe' | t }}">→</button>{% if form.posted_successfully? %}<p role="status">{{ 'general.thank_you_for_subscribing' | t }}</p>{% endif %}{{ form.errors | default_errors }}{% endform %}
+<p>{{ section.settings.newsletter_text | escape }}</p><div class="socials">{% if section.settings.instagram != blank %}<a href="{{ section.settings.instagram }}">{{ 'general.instagram' | t }}</a>{% endif %}{% if section.settings.facebook != blank %}<a href="{{ section.settings.facebook }}">{{ 'general.facebook' | t }}</a>{% endif %}</div></div>
+<div><h2 class="footer-heading">{{ 'general.our_contacts' | t }}</h2><div class="rte">{{ section.settings.contact }}</div></div><div><h2 class="footer-heading">{{ 'general.useful_links' | t }}</h2><ul>{% for link in section.settings.menu.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}</ul></div></div>
+<div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}.</span><div class="policy-links">{% for policy in shop.policies %}{% if policy != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</div></div></div></footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slogan",
+      "label": "Slogan",
+      "default": "Where healthy pets come first"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter description",
+      "default": "Pet tips, care guides and new arrivals, straight to your inbox."
+    },
+    {
+      "type": "richtext",
+      "id": "contact",
+      "label": "Contact details",
+      "default": "<p>Add your store address, email and opening hours here.</p>"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer menu",
+      "default": "footer"
+    },
+    {
+      "type": "url",
+      "id": "instagram",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "facebook",
+      "label": "Facebook"
+    }
+  ]
+}
+{% endschema %}

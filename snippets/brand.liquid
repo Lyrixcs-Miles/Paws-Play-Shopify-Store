@@ -1,0 +1,4 @@
+{% doc %}
+Renders the store logo and name.
+{% enddoc %}
+{% if settings.logo != blank %}{{ settings.logo | image_url: width: 320 | image_tag: class: 'brand-image', widths: '160, 320', sizes: '160px', alt: shop.name }}{% else %}<span class="logo-symbol" aria-hidden="true">♧</span><span class="logo-name">{{ shop.name | escape }}</span>{% endif %}

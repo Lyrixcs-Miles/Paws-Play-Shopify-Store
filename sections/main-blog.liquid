@@ -1,0 +1,7 @@
+<div class="page-hero"><h1>{{ blog.title | escape }}</h1></div><section><div class="container">{% if blog.all_tags.size > 0 %}<nav class="filters" aria-label="{{ 'general.blog_categories' | t }}"><a href="{{ blog.url }}"{% unless current_tags %} class="active"{% endunless %}>{{ 'general.all' | t }}</a>{% for tag in blog.all_tags %}<a href="{{ blog.url }}/tagged/{{ tag | handleize }}"{% if current_tags contains tag %} class="active"{% endif %}>{{ tag | escape }}</a>{% endfor %}</nav>{% endif %}{% paginate blog.articles by 9 %}<div class="blog-grid">{% for article in blog.articles %}{% render 'article-card', article: article %}{% else %}<p>{{ 'general.new_stories_are_coming_soon' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div></section>
+{% schema %}
+{
+  "name": "Blog posts",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "questions": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "block0": {
+          "type": "question",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Add your shipping timeframes here.</p>"
+          }
+        },
+        "block1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I return an item?",
+            "answer": "<p>Add your returns policy here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "questions"
+  ]
+}

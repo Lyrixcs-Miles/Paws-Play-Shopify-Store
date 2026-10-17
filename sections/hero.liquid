@@ -1,0 +1,106 @@
+<section class="hero"><div class="hero-big" aria-hidden="true">{{ section.settings.background_text | escape }}</div><div class="container hero-grid"><div class="hero-text"><p>{{ section.settings.intro | escape }}</p><h1>{{ section.settings.heading | escape }}<br><span>{{ section.settings.subheading | escape }}</span></h1><div class="hero-buttons"><a class="btn" href="{{ section.settings.primary_url | default: routes.all_products_collection_url }}">{{ section.settings.primary_label | escape }}</a><a class="btn" href="{{ section.settings.secondary_url | default: routes.all_products_collection_url }}">{{ section.settings.secondary_label | escape }}</a></div></div><div class="hero-visual"><div class="main hero-dogs">
+{% if section.settings.husky != blank %}{{ section.settings.husky | image_url: width: 1600 | image_tag: widths: '360, 540, 800, 1100, 1600', sizes: '(max-width: 600px) 100vw, 50vw', class: 'hero-husky', loading: 'eager', fetchpriority: 'high' }}{% else %}<img src="{{ 'hero-husky.png' | asset_url }}" alt="Blue-eyed husky" class="hero-husky" width="1000" height="1000" loading="eager" fetchpriority="high">{% endif %}
+{% if section.settings.puppy != blank %}{{ section.settings.puppy | image_url: width: 1600 | image_tag: widths: '360, 540, 800, 1100, 1600', sizes: '(max-width: 600px) 100vw, 50vw', class: 'hero-tiny-puppy', loading: 'eager', fetchpriority: 'high' }}{% else %}<img src="{{ 'tiny-puppy.png' | asset_url }}" alt="Fluffy white puppy wearing a pink bandana" class="hero-tiny-puppy" width="1000" height="1000" loading="eager" fetchpriority="high">{% endif %}
+</div><div class="hero-cards">{% for block in section.blocks %}<div class="hero-card-wrapper" {{ block.shopify_attributes }}>{% if block.settings.product != blank %}{% render 'product-card', product: block.settings.product, hero: true %}{% else %}<a class="hero-card hero-preview" href="{{ routes.all_products_collection_url }}">{% if forloop.first %}<img src="{{ 'hero-bowl.svg' | asset_url }}" alt="Stainless steel pet bowl" class="hero-product" width="1000" height="1000" loading="lazy">{% else %}<img src="{{ 'leash.svg' | asset_url }}" alt="Retractable leash" class="hero-product" width="1000" height="1000" loading="lazy">{% endif %}<h3>{{ block.settings.label | escape }}</h3><span>{{ 'general.explore_the_shop' | t }} →</span></a>{% endif %}</div>{% endfor %}</div></div></div></section>
+{% schema %}
+{
+  "name": "Hero with two dogs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "background_text",
+      "label": "Background lettering",
+      "default": "pet store"
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Our mission is simple: to help pets live healthier, happier lives while making pet care easier and enjoyable for their families."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "The Ultimate Pet"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Second line",
+      "default": "Shopping Destination"
+    },
+    {
+      "type": "image_picker",
+      "id": "husky",
+      "label": "Large dog image"
+    },
+    {
+      "type": "image_picker",
+      "id": "puppy",
+      "label": "Small dog image"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "First button label",
+      "default": "New arrivals"
+    },
+    {
+      "type": "url",
+      "id": "primary_url",
+      "label": "First button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Second button label",
+      "default": "All products"
+    },
+    {
+      "type": "url",
+      "id": "secondary_url",
+      "label": "Second button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Featured product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Preview label",
+          "default": "Pet essentials"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Hero with two dogs",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "label": "Metal bowl"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "label": "The leash"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

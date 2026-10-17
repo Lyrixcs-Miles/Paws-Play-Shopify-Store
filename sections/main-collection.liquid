@@ -1,0 +1,17 @@
+<div class="page-hero"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div></div><section><div class="container"><form class="collection-controls" method="get" action="{{ collection.url }}"><div class="collection-filters">{% for filter in collection.filters %}<details><summary>{{ filter.label | escape }}</summary><div class="filter-options">{% case filter.type %}{% when 'boolean', 'list' %}{% for value in filter.values %}<label><input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"{% if value.active %} checked{% endif %}{% if value.count == 0 and value.active == false %} disabled{% endif %}>{{ value.label | escape }} ({{ value.count }})</label>{% endfor %}{% when 'price_range' %}<label>{{ 'general.minimum_price' | t }}<input type="number" name="{{ filter.min_value.param_name }}" min="0" step="0.01"{% if filter.min_value.value %} value="{{ filter.min_value.value | divided_by: 100.0 }}"{% endif %}></label><label>{{ 'general.maximum_price' | t }}<input type="number" name="{{ filter.max_value.param_name }}" min="0" step="0.01"{% if filter.max_value.value %} value="{{ filter.max_value.value | divided_by: 100.0 }}"{% endif %}></label>{% endcase %}</div></details>{% endfor %}</div><label>{{ 'general.sort_products' | t }}<select name="sort_by">{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}{% for option in collection.sort_options %}<option value="{{ option.value }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>{% endfor %}</select></label><button class="btn btn-brand" type="submit">{{ 'general.apply' | t }}</button><a href="{{ collection.url }}">{{ 'general.clear_filters' | t }}</a></form>{% paginate collection.products by section.settings.per_page %}<p class="results-count">{{ collection.products_count }} {{ 'general.products' | t }}</p><div class="product-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p>{{ 'general.no_products_found_try_changing_your_filters' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div></section>
+{% schema %}
+{
+  "name": "Collection products",
+  "settings": [
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per page",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

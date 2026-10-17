@@ -1,0 +1,20 @@
+<div class="page-hero"><h1>{{ page.title | escape }}</h1></div><section><div class="container contact-grid"><div><h2>{{ section.settings.heading | escape }}</h2>{% assign contact_form_id = 'Contact-' | append: section.id %}{% form 'contact', id: contact_form_id, class: 'contact-form' %}{% if form.posted_successfully? %}<p role="status" class="form-success">{{ 'general.thank_you_your_message_has_been_sent' | t }}</p>{% endif %}{{ form.errors | default_errors }}<label for="ContactName-{{ section.id }}">{{ 'general.name' | t }}</label><input id="ContactName-{{ section.id }}" type="text" name="contact[name]" autocomplete="name" value="{{ form.name | default: customer.name | escape }}" required><label for="ContactEmail-{{ section.id }}">{{ 'general.email_address' | t }}</label><input id="ContactEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" value="{{ form.email | default: customer.email | escape }}" required><label for="ContactBody-{{ section.id }}">{{ 'general.message' | t }}</label><textarea id="ContactBody-{{ section.id }}" name="contact[body]" required>{{ form.body | escape }}</textarea><button class="btn btn-brand" type="submit">{{ 'general.send_message' | t }}</button>{% endform %}</div><div class="info-block rte">{{ page.content }}{{ section.settings.details }}</div></div></section>
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Send us a message"
+    },
+    {
+      "type": "richtext",
+      "id": "details",
+      "label": "Contact details",
+      "default": "<p>Add your address, email, phone and opening hours here.</p>"
+    }
+  ]
+}
+{% endschema %}

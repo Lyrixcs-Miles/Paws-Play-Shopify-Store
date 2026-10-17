@@ -1,0 +1,7 @@
+<div class="page-hero"><h1>{{ 'general.search' | t }}</h1><form action="{{ routes.search_url }}" method="get" role="search" class="search-form"><label class="visually-hidden" for="Search-{{ section.id }}">{{ 'general.search_the_store' | t }}</label><input type="search" name="q" id="Search-{{ section.id }}" value="{{ search.terms | escape }}" placeholder="{{ 'general.search_the_store' | t }}"><input type="hidden" name="options[prefix]" value="last"><button class="btn btn-brand" type="submit">{{ 'general.search' | t }}</button></form></div>{% if search.performed %}<section><div class="container">{% paginate search.results by 16 %}<p class="results-count">{{ search.results_count }} {{ 'general.results' | t }}</p><div class="product-grid">{% for result in search.results %}{% case result.object_type %}{% when 'product' %}{% render 'product-card', product: result %}{% when 'article' %}{% render 'article-card', article: result %}{% else %}<article><h2><a href="{{ result.url }}">{{ result.title | escape }}</a></h2><p>{{ result.content | strip_html | truncate: 160 }}</p></article>{% endcase %}{% else %}<p>{{ 'general.no_results_try_a_different_search' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div></section>{% endif %}
+{% schema %}
+{
+  "name": "Search results",
+  "settings": []
+}
+{% endschema %}
