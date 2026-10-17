@@ -1,0 +1,83 @@
+<div class="pp-section-shell color-{{ section.settings.color_scheme }} gradient"><section class="pp-testimonials"><div class="pp-container"><div class="pp-center"><span class="pp-tag">{{ section.settings.eyebrow | escape }}</span></div><h2 class="pp-section-title">{{ section.settings.heading | escape }}</h2><div class="pp-testi-grid">{% for block in section.blocks %}<div class="pp-testi-card" {{ block.shopify_attributes }}>{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 800 | image_tag: class: 'pp-care-photo', loading: 'lazy' }}{% else %}{% case forloop.index %}{% when 1 %}<img src="{{ 'pp-editorial-1.jpg' | asset_url }}" alt="Dog relaxing" class="pp-care-photo" width="1000" height="1000" loading="lazy">{% when 2 %}<img src="{{ 'pp-editorial-2.jpg' | asset_url }}" alt="Cat at home" class="pp-care-photo" width="1000" height="1000" loading="lazy">{% else %}<img src="{{ 'pp-dog-natural.jpg' | asset_url }}" alt="Happy beagle" class="pp-care-photo" width="1000" height="1000" loading="lazy">{% endcase %}{% endif %}<div class="pp-body"><div class="pp-testi-tags"><span>{{ block.settings.tag | escape }}</span></div><h3>{% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{{ block.settings.title | escape }}</a>{% else %}{{ block.settings.title | escape }}{% endif %}</h3></div></div>{% endfor %}</div></div></section>
+</div>
+{% schema %}
+{
+  "name": "Paws: pet care",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small label",
+      "default": "Made for happy pets"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by Pet Owners Who Want the Very Best"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Care card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Care & wellness"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pet wellness"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Paws: pet care",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "Pet Nutrition"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Cat Essentials"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Pet Wellness"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

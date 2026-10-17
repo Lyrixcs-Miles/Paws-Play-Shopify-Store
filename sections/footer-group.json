@@ -1,10 +1,50 @@
 {
+  "name": "t:sections.footer.name",
   "type": "footer",
-  "name": "Footer",
   "sections": {
     "footer": {
       "type": "footer",
-      "settings": {}
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "links": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Useful links",
+            "menu": "footer"
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Visit us",
+            "subtext": "<p>Add your store address, email and opening hours in the theme editor.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "links",
+        "contact"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "newsletter_enable": true,
+        "newsletter_heading": "Pet tips, new arrivals & a little joy",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [

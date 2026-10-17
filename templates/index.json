@@ -1,7 +1,7 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
+      "type": "pp-hero",
       "settings": {},
       "blocks": {
         "block0": {
@@ -23,7 +23,7 @@
       ]
     },
     "categories": {
-      "type": "categories",
+      "type": "pp-categories",
       "settings": {
         "eyebrow": "Find the perfect products",
         "heading": "Shop by Category"
@@ -62,7 +62,7 @@
       ]
     },
     "promotions": {
-      "type": "promotions",
+      "type": "pp-promotions",
       "settings": {},
       "blocks": {
         "block0": {
@@ -90,12 +90,29 @@
     "arrivals": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "Find the perfect products",
-        "heading": "Our Latest Arrivals"
+        "title": "Our Latest Arrivals",
+        "heading_size": "h1",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     },
     "care": {
-      "type": "care-cards",
+      "type": "pp-care-cards",
       "settings": {
         "eyebrow": "Pet care in action",
         "heading": "Trusted by Pet Owners Who Want the Very Best"
@@ -127,7 +144,7 @@
       ]
     },
     "testimonials": {
-      "type": "testimonials",
+      "type": "pp-testimonials",
       "settings": {
         "eyebrow": "Happy customers",
         "heading": "What Clients Say"
@@ -148,8 +165,17 @@
     "blog": {
       "type": "featured-blog",
       "settings": {
-        "eyebrow": "Explore our blog",
-        "heading": "Our Latest News"
+        "heading": "Our Latest News",
+        "heading_size": "h1",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     }
   },

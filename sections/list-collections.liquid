@@ -1,7 +1,0 @@
-<div class="page-hero"><h1>{{ 'general.shop_by_collection' | t }}</h1></div><section><div class="container">{% paginate collections by 12 %}<div class="blog-grid">{% for collection in collections %}<a href="{{ collection.url }}">{% if collection.featured_image %}{{ collection.featured_image | image_url: width: 800 | image_tag: class: 'news-photo', loading: 'lazy' }}{% else %}{{ 'collection-1' | placeholder_svg_tag: 'news-photo' }}{% endif %}<h2>{{ collection.title | escape }}</h2></a>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div></section>
-{% schema %}
-{
-  "name": "Collection list",
-  "settings": []
-}
-{% endschema %}
