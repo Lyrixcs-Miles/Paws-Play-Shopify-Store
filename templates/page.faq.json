@@ -20,26 +20,44 @@
         "padding_bottom": 72
       },
       "blocks": {
-        "shipping": {
+        "delivery": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "When will my order arrive?",
+            "heading": "Do you deliver to my area?",
             "icon": "truck",
-            "row_content": "<p>Add your shipping timeframes here.</p>"
+            "row_content": "<p>Available delivery options and charges are shown at checkout. Contact us if you need help before placing an order.</p>"
           }
         },
         "returns": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I return an item?",
+            "heading": "How do I return an item?",
             "icon": "return",
-            "row_content": "<p>Add your returns policy here.</p>"
+            "row_content": "<p>Please contact us with your order number before sending an item back. We can explain eligibility and the next steps. See our Delivery &amp; Returns page for more information.</p>"
+          }
+        },
+        "food": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I choose the right food for my pet?",
+            "icon": "heart",
+            "row_content": "<p>Your pet's age, size, and individual needs matter. Check the product information and feeding guide. For special diets or health concerns, ask your veterinarian before changing food.</p>"
+          }
+        },
+        "help": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I get help with an order?",
+            "icon": "chat_bubble",
+            "row_content": "<p>Send us a message through our Contact page and include your order number if you have one.</p>"
           }
         }
       },
       "block_order": [
-        "shipping",
-        "returns"
+        "delivery",
+        "returns",
+        "food",
+        "help"
       ]
     }
   },

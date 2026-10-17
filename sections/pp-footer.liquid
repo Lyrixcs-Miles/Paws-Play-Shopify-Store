@@ -1,0 +1,54 @@
+{{ 'pp-footer.css' | asset_url | stylesheet_tag }}
+<footer class="pp-footer color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="pp-footer-top">
+      <a class="pp-footer-brand" href="{{ routes.root_url }}">{% if settings.logo != blank %}{{ settings.logo | image_url: width: 320 | image_tag: widths: '160, 320', sizes: '160px', loading: 'lazy', alt: shop.name }}{% else %}<span class="pp-footer-mark" aria-hidden="true">♧</span><span>{{ shop.name | escape }}</span>{% endif %}</a>
+      <p>{{ section.settings.tagline | escape }}</p>
+    </div>
+    <div class="pp-footer-grid">
+      <div class="pp-footer-newsletter">
+        <h2>{{ section.settings.heading | escape }}</h2>
+        <p>{{ section.settings.description | escape }}</p>
+        {% if section.settings.newsletter_enable %}
+          {% assign newsletter_id = 'PawsNewsletter-' | append: section.id %}
+          {% form 'customer', id: newsletter_id %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <label class="visually-hidden" for="PawsEmail-{{ section.id }}">{{ 'newsletter.label' | t }}</label>
+            <div class="pp-footer-email"><input id="PawsEmail-{{ section.id }}" type="email" name="contact[email]" placeholder="{{ 'newsletter.label' | t }}" autocomplete="email" required><button type="submit" aria-label="{{ 'newsletter.button_label' | t }}">→</button></div>
+            {% if form.posted_successfully? %}<p class="pp-footer-form-status" role="status">{{ 'newsletter.success' | t }}</p>{% endif %}
+            {% if form.errors %}<div class="pp-footer-form-status" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+          {% endform %}
+        {% endif %}
+        {% render 'social-icons', class: 'pp-footer-socials' %}
+      </div>
+      <div><h2>{{ section.settings.shop_heading | escape }}</h2><ul class="pp-footer-links" role="list">{% if section.settings.shop_menu != blank %}{% for link in section.settings.shop_menu.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}{% else %}<li><a href="{{ routes.all_products_collection_url }}">{{ 'paws_play.shop' | t }}</a></li><li><a href="{{ routes.collections_url }}">{{ 'paws_play.shop_by_collection' | t }}</a></li><li><a href="{{ routes.search_url }}">{{ 'general.search.search' | t }}</a></li><li><a href="{{ routes.cart_url }}">{{ 'paws_play.cart' | t }}</a></li>{% endif %}</ul></div>
+      <div><h2>{{ section.settings.help_heading | escape }}</h2><ul class="pp-footer-links" role="list">{% if section.settings.help_menu != blank %}{% for link in section.settings.help_menu.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}{% else %}{% render 'pp-information-links', mobile: false, footer: true %}{% endif %}</ul></div>
+      <div><h2>{{ section.settings.contact_heading | escape }}</h2><p class="pp-footer-contact">{{ section.settings.contact_description | escape }}</p>{% if section.settings.contact_details != blank %}<div class="pp-footer-contact rte">{{ section.settings.contact_details }}</div>{% endif %}{% if section.settings.email != blank %}<a class="pp-footer-contact-link" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>{% endif %}{% if section.settings.phone != blank %}<a class="pp-footer-contact-link" href="tel:{{ section.settings.phone | remove: ' ' | escape }}">{{ section.settings.phone | escape }}</a>{% endif %}<a class="pp-footer-contact-button" href="{{ section.settings.contact_url | default: pages.contact.url | default: routes.root_url }}">{{ section.settings.contact_label | escape }} <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="pp-footer-bottom"><small>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</small><ul class="pp-footer-policies" role="list">{% for policy in shop.policies %}{% if policy != blank %}<li><a href="{{ policy.url }}">{{ policy.title | escape }}</a></li>{% endif %}{% endfor %}</ul>{% if section.settings.payment_enable %}<ul class="pp-footer-payments" role="list" aria-label="{{ 'sections.footer.payment' | t }}">{% for type in shop.enabled_payment_types %}<li>{{ type | payment_type_svg_tag }}</li>{% endfor %}</ul>{% endif %}</div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Paws: footer",
+  "settings": [
+    {"type":"color_scheme","id":"color_scheme","label":"Color scheme","default":"scheme-3"},
+    {"type":"text","id":"tagline","label":"Top tagline","default":"Where healthy pets come first"},
+    {"type":"text","id":"heading","label":"Newsletter heading","default":"A little joy in your inbox"},
+    {"type":"text","id":"description","label":"Newsletter description","default":"Pet care tips, new arrivals, and good things for your best friend."},
+    {"type":"checkbox","id":"newsletter_enable","label":"Show newsletter signup","default":true},
+    {"type":"text","id":"shop_heading","label":"Shop column heading","default":"Explore the shop"},
+    {"type":"link_list","id":"shop_menu","label":"Shop menu (optional)"},
+    {"type":"text","id":"help_heading","label":"Help column heading","default":"Here to help"},
+    {"type":"link_list","id":"help_menu","label":"Help menu (optional)"},
+    {"type":"text","id":"contact_heading","label":"Contact heading","default":"Let’s talk pets"},
+    {"type":"text","id":"contact_description","label":"Contact description","default":"Questions about a product or your order? Our team is here to help."},
+    {"type":"richtext","id":"contact_details","label":"Address and opening hours"},
+    {"type":"text","id":"email","label":"Email address"},
+    {"type":"text","id":"phone","label":"Phone number"},
+    {"type":"text","id":"contact_label","label":"Contact button label","default":"Get in touch"},
+    {"type":"url","id":"contact_url","label":"Contact link override"},
+    {"type":"checkbox","id":"payment_enable","label":"Show payment icons","default":true}
+  ]
+}
+{% endschema %}

@@ -21,7 +21,7 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
+              {% if section.settings.pp_complete_navigation %}{% render 'pp-navigation', mobile: true, section: section %}{% else %}{%- for link in section.settings.menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -132,7 +132,7 @@
                     </a>
                   {%- endif -%}
                 </li>
-              {%- endfor -%}
+              {%- endfor -%}{% endif %}
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">

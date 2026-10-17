@@ -600,6 +600,12 @@
     "page_not_found": "Page not found",
     "the_page_you_are_looking_for_is_unavailable": "The page you are looking for is unavailable.",
     "store_password": "Store password",
-    "enter_store": "Enter store"
+    "enter_store": "Enter store",
+    "blog": "Blog",
+    "pages": "Pages",
+    "contact": "Contact",
+    "about_us": "About us",
+    "delivery_returns": "Delivery & returns",
+    "faq": "FAQ"
   }
 }

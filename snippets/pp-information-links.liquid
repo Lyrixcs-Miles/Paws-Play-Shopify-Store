@@ -1,0 +1,20 @@
+{% doc %}
+Renders the store's information links for the header or footer.
+@param {boolean} [mobile] - Use Dawn's mobile drawer link styling
+@param {boolean} [footer] - Use simple footer link styling
+{% enddoc %}
+{% liquid
+  assign link_class = 'header__menu-item list-menu__item link link--text focus-inset caption-large'
+  if mobile
+    assign link_class = 'menu-drawer__menu-item list-menu__item link link--text focus-inset'
+  endif
+  if footer
+    assign link_class = ''
+  endif
+  assign about_page = pages.about | default: pages.about-us
+  assign delivery_page = pages.delivery | default: pages.delivery-returns
+%}
+<li><a class="{{ link_class }}" href="{{ about_page.url | default: '/pages/about' }}">{{ 'paws_play.about_us' | t }}</a></li>
+<li><a class="{{ link_class }}" href="{{ delivery_page.url | default: '/pages/delivery' }}">{{ 'paws_play.delivery_returns' | t }}</a></li>
+<li><a class="{{ link_class }}" href="{{ pages.faq.url | default: '/pages/faq' }}">{{ 'paws_play.faq' | t }}</a></li>
+<li><a class="{{ link_class }}" href="{{ pages.contact.url | default: '/pages/contact' }}">{{ 'paws_play.contact' | t }}</a></li>

@@ -9,7 +9,10 @@
     },
     "story": {
       "type": "pp-story",
-      "settings": {}
+      "settings": {
+        "heading": "Caring for pets like family",
+        "text": "<p>Paws &amp; Play started with a simple idea: pet owners deserve quality food, supplies, and products in one trusted place.</p><p>We carefully choose every item in our range, so you can shop with confidence and find what your pet actually needs.</p>"
+      }
     }
   },
   "order": [

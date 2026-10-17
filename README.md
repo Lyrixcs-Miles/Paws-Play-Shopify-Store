@@ -25,6 +25,7 @@ Connect `Lyrixcs-Miles/Paws-Play-Shopify-Store`, branch **rebuild-on-dawn**, thr
 - The `Paws:` sections provide the two-dog hero, category cards, banners, pet care cards, and testimonials. Edit their images, text, links, products, and color schemes in the theme editor.
 - Latest Arrivals and Latest News use Dawn's native featured collection and blog sections. Choose your collection and blog. Catalog data and article content come from Shopify Admin.
 - Edit your logo, fonts, header menus, footer, and color schemes in Dawn's settings. Scheme 1 is white with terracotta buttons, scheme 2 is cream, and scheme 3 is the dark brown footer.
+- The header's **Show complete Paws navigation** setting restores Home, Shop, Blog, Pages, and Contact on desktop, with all information links visible in the mobile drawer. Turn it off to use your selected Shopify menu. The **Paws: footer** section includes editable newsletter copy, shop/help menus, contact details, social links, and payment icons, with responsive layouts for phones, tablets, and desktop screens.
 - Create About, Contact, FAQ, and Delivery pages, and assign their matching templates. Enter real contact details and policies. Replace the starter brand quote with genuine feedback or remove that section.
 - Both hero dogs remain as unique default images. Editorial pet photos are not repeated. A product's catalog image stays consistent wherever that same product appears.
 

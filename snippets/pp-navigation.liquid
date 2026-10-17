@@ -1,0 +1,19 @@
+{% doc %}
+Renders the complete Paws navigation inside Dawn's desktop or mobile menu.
+@param {boolean} [mobile] - Use a flat, accessible drawer menu
+@param {section} section - Header section containing navigation settings
+{% enddoc %}
+{% liquid
+  assign link_class = 'header__menu-item list-menu__item link link--text focus-inset'
+  if mobile
+    assign link_class = 'menu-drawer__menu-item list-menu__item link link--text focus-inset'
+  endif
+  assign store_blog = section.settings.pp_blog | default: blogs.news
+%}
+<li><a class="{{ link_class }}" href="{{ routes.root_url }}"{% if request.page_type == 'index' %} aria-current="page"{% endif %}>{{ 'paws_play.home' | t }}</a></li>
+<li><a class="{{ link_class }}" href="{{ routes.all_products_collection_url }}">{{ 'paws_play.shop' | t }}</a></li>
+<li><a class="{{ link_class }}" href="{{ store_blog.url | default: '/blogs/news' }}">{{ 'paws_play.blog' | t }}</a></li>
+{% if mobile %}{% render 'pp-information-links', mobile: true %}{% else %}
+<li class="pp-header-extra"><header-menu><details id="PawsPages-{{ section.id }}"><summary class="header__menu-item list-menu__item link focus-inset"><span>{{ 'paws_play.pages' | t }}</span>{{ 'icon-caret.svg' | inline_asset_content }}</summary><ul class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup" role="list">{% render 'pp-information-links' %}</ul></details></header-menu></li>
+<li><a class="{{ link_class }}" href="{{ pages.contact.url | default: '/pages/contact' }}">{{ 'paws_play.contact' | t }}</a></li>
+{% endif %}

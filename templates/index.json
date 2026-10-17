@@ -175,7 +175,8 @@
         "show_author": false,
         "show_view_all": true,
         "padding_top": 72,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "blog": "news"
       }
     }
   },
