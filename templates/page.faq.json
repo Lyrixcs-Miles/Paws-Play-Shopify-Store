@@ -1,12 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
     "questions": {
       "type": "collapsible-content",
       "settings": {
@@ -20,49 +13,120 @@
         "padding_bottom": 72
       },
       "blocks": {
+        "place_order": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I place an order?",
+            "icon": "price_tag",
+            "row_content": "<p>Browse the <a href=\"/collections/all\">shop</a>, add items to your cart, and go to checkout when you're ready. You'll see delivery costs and your total before you pay.</p>"
+          }
+        },
+        "payment": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which payment methods do you accept?",
+            "icon": "lock",
+            "row_content": "<p>Available payment methods are shown at checkout. All payments are handled through Shopify's secure checkout.</p>"
+          }
+        },
+        "change_order": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change or cancel my order?",
+            "icon": "clipboard",
+            "row_content": "<p>Contact us as soon as possible with your order number. If your order hasn't been dispatched yet, we'll do our best to help.</p>"
+          }
+        },
+        "account": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need an account to order?",
+            "icon": "silhouette",
+            "row_content": "<p>An account is optional. It makes it easier to view your past orders and check out faster next time.</p>"
+          }
+        },
         "delivery": {
           "type": "collapsible_row",
           "settings": {
             "heading": "Do you deliver to my area?",
+            "icon": "map_pin",
+            "row_content": "<p>We deliver nationwide within South Africa using The Courier Guy. We don't currently ship internationally.</p>"
+          }
+        },
+        "delivery_time": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will my order take?",
             "icon": "truck",
-            "row_content": "<p>Available delivery options and charges are shown at checkout. Contact us if you need help before placing an order.</p>"
+            "row_content": "<p>Orders are dispatched within 3–5 business days, and delivery usually takes a further 2–5 business days. Remote areas may take a little longer.</p>"
+          }
+        },
+        "tracking": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I track my order?",
+            "icon": "box",
+            "row_content": "<p>We'll email you a tracking number when your order is dispatched. You can follow your parcel at <a href=\"https://www.thecourierguy.co.za\" target=\"_blank\" rel=\"noopener\">thecourierguy.co.za</a>.</p>"
           }
         },
         "returns": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How do I return an item?",
+            "heading": "Can I return something?",
             "icon": "return",
-            "row_content": "<p>Please contact us with your order number before sending an item back. We can explain eligibility and the next steps. See our Delivery &amp; Returns page for more information.</p>"
+            "row_content": "<p>Yes. Unused items in their original packaging can be returned within 30 days. For pets' health and safety, we can't accept returns of food, treats or opened grooming products. Please contact us before sending anything back. See <a href=\"/pages/delivery\">Delivery &amp; Returns</a> for the full details.</p>"
+          }
+        },
+        "damaged": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My order arrived damaged. What do I do?",
+            "icon": "check_mark",
+            "row_content": "<p>Contact us within 7 days with your order number and photos of the item and packaging, and we'll sort it out.</p>"
           }
         },
         "food": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How do I choose the right food for my pet?",
-            "icon": "heart",
-            "row_content": "<p>Your pet's age, size, and individual needs matter. Check the product information and feeding guide. For special diets or health concerns, ask your veterinarian before changing food.</p>"
+            "heading": "How do I switch my pet to a new food?",
+            "icon": "serving_dish",
+            "row_content": "<p>A gradual change is usually gentlest on your pet's tummy. Mix a little of the new food into their usual food and slowly increase the amount over several days. Follow the feeding guide on the pack, and ask your vet if your pet has a sensitive stomach or a health condition.</p>"
           }
         },
-        "help": {
+        "toys": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How can I get help with an order?",
+            "heading": "Which toys are right for my pet?",
+            "icon": "paw_print",
+            "row_content": "<p>Choose toys that suit your pet's size and play style. Strong chewers need tougher toys, and smaller toys can be a choking risk for larger pets. Check toys regularly and replace them once they're damaged. Supervise play with new toys until you know how your pet uses them.</p>"
+          }
+        },
+        "advice": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can you help me choose a product?",
             "icon": "chat_bubble",
-            "row_content": "<p>Send us a message through our Contact page and include your order number if you have one.</p>"
+            "row_content": "<p>Of course. <a href=\"/pages/contact\">Tell us</a> a little about your pet, including age, size and anything they love or don't get along with, and we'll suggest some options.</p>"
           }
         }
       },
       "block_order": [
+        "place_order",
+        "payment",
+        "change_order",
+        "account",
         "delivery",
+        "delivery_time",
+        "tracking",
         "returns",
+        "damaged",
         "food",
-        "help"
+        "toys",
+        "advice"
       ]
     }
   },
   "order": [
-    "main",
     "questions"
   ]
 }
