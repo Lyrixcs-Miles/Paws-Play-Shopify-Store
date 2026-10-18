@@ -1,4 +1,4 @@
-<div class="pp-section-shell color-{{ section.settings.color_scheme }} gradient"><section><div class="pp-container"><div class="pp-center"><span class="pp-tag">{{ section.settings.eyebrow | escape }}</span></div><h2 class="pp-section-title">{{ section.settings.heading | escape }}</h2><div class="pp-cat-grid">{% for block in section.blocks %}{% assign destination = block.settings.link | default: block.settings.collection.url | default: routes.all_products_collection_url %}<a class="pp-cat" href="{{ destination }}" {{ block.shopify_attributes }}><h3>{{ block.settings.title | escape }}</h3>{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 500 | image_tag: class: 'pp-category-art', loading: 'lazy' }}{% elsif block.settings.collection.featured_image != blank %}{{ block.settings.collection.featured_image | image_url: width: 500 | image_tag: class: 'pp-category-art', loading: 'lazy' }}{% else %}{% assign art = forloop.index0 | modulo: 4 %}{% case art %}{% when 0 %}<img src="{{ 'pp-category-bed-v1.png' | asset_url }}" alt="Taupe and cream plush pet bed" class="pp-category-art" width="1000" height="1000" loading="lazy">{% when 1 %}<img src="{{ 'pp-category-toys-v1.png' | asset_url }}" alt="Pet toy" class="pp-category-art" width="1000" height="1000" loading="lazy">{% when 2 %}<img src="{{ 'pp-category-walk-v1.png' | asset_url }}" alt="Walking accessories" class="pp-category-art" width="1000" height="1000" loading="lazy">{% else %}<img src="{{ 'pp-category-supplies-v1.png' | asset_url }}" alt="Pet grooming brush and mitt" class="pp-category-art" width="1000" height="1000" loading="lazy">{% endcase %}{% endif %}</a>{% endfor %}</div></div></section>
+<div class="pp-section-shell color-{{ section.settings.color_scheme }} gradient"><section><div class="pp-container"><div class="pp-center"><span class="pp-tag">{{ section.settings.eyebrow | escape }}</span></div><h2 class="pp-section-title">{{ section.settings.heading | escape }}</h2><div class="pp-cat-grid">{% for block in section.blocks %}{% assign destination = block.settings.link | default: block.settings.collection.url | default: routes.all_products_collection_url %}<a class="pp-cat" href="{{ destination }}" {{ block.shopify_attributes }}><h3>{{ block.settings.title | escape }}</h3>{% assign category_art = blank %}{% case block.settings.collection.handle %}{% when 'home-comfort' %}{% assign category_art = 'pp-category-home-v2.png' %}{% when 'dogs' %}{% assign category_art = 'pp-category-dogs-v2.png' %}{% when 'travel-car' %}{% assign category_art = 'pp-category-travel-v2.png' %}{% when 'grooming-bath' %}{% assign category_art = 'pp-category-supplies-v1.png' %}{% endcase %}{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 500 | image_tag: class: 'pp-category-art', loading: 'lazy' }}{% elsif category_art != blank %}<img src="{{ category_art | asset_url }}" alt="{{ block.settings.title | escape }}" class="pp-category-art" width="1254" height="1254" loading="lazy">{% elsif block.settings.collection.featured_image != blank %}{{ block.settings.collection.featured_image | image_url: width: 500 | image_tag: class: 'pp-category-art', loading: 'lazy' }}{% else %}{% assign art = forloop.index0 | modulo: 4 %}{% case art %}{% when 0 %}<img src="{{ 'pp-category-home-v2.png' | asset_url }}" alt="Mesh pet safety gate" class="pp-category-art" width="1000" height="1000" loading="lazy">{% when 1 %}<img src="{{ 'pp-category-dogs-v2.png' | asset_url }}" alt="Friendly beagle" class="pp-category-art" width="1000" height="1000" loading="lazy">{% when 2 %}<img src="{{ 'pp-category-travel-v2.png' | asset_url }}" alt="Quilted pet car seat protector" class="pp-category-art" width="1000" height="1000" loading="lazy">{% else %}<img src="{{ 'pp-category-supplies-v1.png' | asset_url }}" alt="Pet grooming brush and mitt" class="pp-category-art" width="1000" height="1000" loading="lazy">{% endcase %}{% endif %}</a>{% endfor %}</div></div></section>
 </div>
 {% schema %}
 {
@@ -60,25 +60,25 @@
         {
           "type": "category",
           "settings": {
-            "title": "Beds & comfort"
+            "title": "Home & comfort"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Toys for pets"
+            "title": "Shop for dogs"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Walking accessories"
+            "title": "Travel & car"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Pet supplies"
+            "title": "Grooming & bath"
           }
         }
       ]
