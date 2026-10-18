@@ -1,0 +1,22 @@
+{% doc %}
+Returns the curated storefront preview asset for a product, or an empty string.
+@param {product} product - Product whose card image is being rendered
+{% enddoc %}
+{%- case product.handle -%}
+{%- when 'pet-shower-sprayer-scrubber' -%}pp-product-sprayer-v1.png
+{%- when 'pet-cooling-mat' -%}pp-product-cooling-mat-v1.png
+{%- when 'advanced-ear-rinse-for-cats-dogs' -%}pp-preview-advanced-ear-rinse-for-cats-dogs-v1.png
+{%- when 'dry-shampoo-powder-380-g' -%}pp-preview-dry-shampoo-powder-380-g-v1.png
+{%- when 'pet-shampoo-deodorant-spray-set-500-ml' -%}pp-preview-pet-shampoo-deodorant-spray-set-500-ml-v1.png
+{%- when 'paw-cleansing-foam' -%}pp-preview-paw-cleansing-foam-v1.png
+{%- when 'moisturising-pet-shampoo-for-sensitive-skin' -%}pp-preview-moisturising-pet-shampoo-for-sensitive-skin-v1.png
+{%- when 'rubber-grooming-bath-brush' -%}pp-preview-rubber-grooming-bath-brush-v1.png
+{%- when 'pet-perfume' -%}pp-preview-pet-perfume-v1.png
+{%- when 'pet-oral-spray-for-cats-dogs-60-ml' -%}pp-preview-pet-oral-spray-for-cats-dogs-60-ml-v1.png
+{%- when 'litter-deodorising-beads' -%}pp-preview-litter-deodorising-beads-v1.png
+{%- when 'magic-mesh-pet-safety-gate' -%}pp-preview-magic-mesh-pet-safety-gate-v1.png
+{%- when 'dog-sofa-travel-protector' -%}pp-preview-dog-sofa-travel-protector-v1.png
+{%- when 'waterproof-pet-car-seat-cover' -%}pp-preview-waterproof-pet-car-seat-cover-v1.png
+{%- when 'pet-car-back-seat-cover' -%}pp-preview-pet-car-back-seat-cover-v1.png
+{%- endcase -%}
+
