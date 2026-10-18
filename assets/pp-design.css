@@ -9,11 +9,11 @@
 @media(max-width:600px){.paws-play-home .header-wrapper{padding:10px 14px}.paws-play-home .header{padding-inline:14px}.paws-play-home .collection__title .title,.paws-play-home .blog__title{font-size:3.2rem}.pp-section-shell .pp-hero{height:740px;min-height:740px}.pp-hero-text{top:42px;bottom:auto;width:88%;left:5%}.pp-hero-text p{max-width:270px;font-size:1.2rem}.pp-hero-text h1{font-size:3.4rem;max-width:340px}.pp-hero-big{top:45%;font-size:30vw}.pp-hero-dogs{left:8%;width:84%;height:53%}.pp-hero-dogs .pp-hero-husky{width:78%;height:100%}.pp-hero-dogs .pp-hero-tiny-puppy{width:44%;height:58%;right:0}.pp-section-title{font-size:3.2rem;letter-spacing:-1.5px}.pp-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:380px}.pp-cat{min-height:185px}.pp-promo-grid{grid-template-columns:1fr;width:calc(100% - 24px);gap:16px}.pp-promo{height:390px;max-height:none}.pp-promo-word{font-size:13.5rem;letter-spacing:-8px}.pp-promo-overlay h2{font-size:3rem}.pp-testi-grid{grid-template-columns:1fr;max-width:380px;margin:auto;gap:22px}.pp-testi-card .pp-care-photo{aspect-ratio:1.2}.pp-story{grid-template-columns:1fr;gap:25px;padding-block:35px 55px}.pp-story-image{height:330px}.pp-story h2{font-size:3rem}.pp-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.pp-section-shell *{transition:none!important}}
 
-.pp-quote-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:center;padding-block:64px;min-height:0}
-.pp-quote-media{min-width:0;aspect-ratio:1.08;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.pp-quote-media .pp-quote-img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;border-radius:18px}
-.pp-quote-body{min-width:0;max-width:500px;padding:0}
-.pp-quote-word{display:block;position:static;font-size:clamp(72px,8vw,112px);font-weight:400;letter-spacing:-.065em;line-height:.85;color:rgba(var(--color-foreground),.09);margin:0 0 26px;overflow-wrap:anywhere;pointer-events:none}
+.pp-quote-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:center;padding-block:56px 0;min-height:0}
+.pp-quote-media{min-width:0;align-self:end;display:flex;align-items:end;justify-content:center}
+.pp-quote-media .pp-quote-img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:center bottom;border-radius:0}
+.pp-quote-body{min-width:0;max-width:500px;padding:24px 0 48px}
+.pp-quote-word{display:block;position:static;font-size:clamp(96px,11vw,160px);font-weight:400;letter-spacing:-.065em;line-height:.85;color:#ffffffd9;margin:0 0 20px;overflow-wrap:anywhere;pointer-events:none}
 .pp-quote-body>.pp-tag{margin-bottom:16px}
 .pp-quote-body h2{font-size:clamp(30px,3.2vw,44px);font-weight:400;line-height:1.12;margin:0 0 22px}
 .pp-quote-slide{margin:0}
@@ -21,6 +21,6 @@
 .pp-quote-author{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:13px;line-height:1.5;font-weight:600;letter-spacing:.02em;color:rgb(var(--color-foreground))}
 .pp-quote-author::before{content:'';width:26px;height:1px;background:currentColor;opacity:.45;flex-shrink:0}
 .pp-quote-body .pp-slider-btns{justify-content:flex-start;margin-top:16px}
-@media(max-width:989px){.pp-quote-section{gap:32px;padding-block:48px}.pp-quote-word{font-size:80px;margin-bottom:22px}.pp-quote-body h2{font-size:32px}.pp-quote-text{font-size:18px}}
-@media(max-width:749px){.pp-quote-section{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;padding-block:36px 44px}.pp-quote-media{width:100%;max-width:420px;aspect-ratio:1.2;margin-inline:auto;border-radius:16px}.pp-quote-body{width:100%;max-width:520px;margin-inline:auto}.pp-quote-word{font-size:72px;margin-bottom:22px}.pp-quote-body h2{font-size:32px;margin-bottom:18px}.pp-quote-text{font-size:18px;line-height:1.6}.pp-quote-author{margin-top:20px}}
+@media(max-width:989px){.pp-quote-section{gap:32px;padding-block:40px 0}.pp-quote-word{font-size:96px;margin-bottom:22px}.pp-quote-body{padding-block:16px 36px}.pp-quote-body h2{font-size:32px}.pp-quote-text{font-size:18px}}
+@media(max-width:749px){.pp-quote-section{display:flex;flex-direction:column-reverse;gap:30px;padding-block:36px 0}.pp-quote-media{align-self:center;width:100%;max-width:360px;margin-inline:auto}.pp-quote-body{width:100%;max-width:520px;margin-inline:auto;padding:0}.pp-quote-word{font-size:96px;margin-bottom:22px}.pp-quote-body h2{font-size:32px;margin-bottom:18px}.pp-quote-text{font-size:18px;line-height:1.6}.pp-quote-author{margin-top:20px}}
 
