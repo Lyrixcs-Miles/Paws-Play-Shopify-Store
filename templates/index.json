@@ -58,9 +58,9 @@
         "block1": {
           "type": "category",
           "settings": {
-            "title": "Shop for dogs",
-            "collection": "dogs",
-            "link": ""
+            "title": "Shop for all pets",
+            "collection": "",
+            "link": "shopify://collections/all"
           }
         },
         "block2": {
