@@ -1,4 +1,31 @@
-<div class="pp-section-shell color-{{ section.settings.color_scheme }} gradient"><section class="pp-section-flush"><div class="pp-container pp-quote-section">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1600 | image_tag: widths: '360, 540, 800, 1100, 1600', sizes: '(max-width: 600px) 100vw, 50vw', class: 'pp-quote-img', loading: 'lazy' }}{% else %}<img src="{{ 'pp-editorial-3.jpg' | asset_url }}" alt="Happy pet" class="pp-quote-img" width="1000" height="1000" loading="lazy">{% endif %}<div class="pp-quote-body"><span class="pp-quote-word" aria-hidden="true">{{ section.settings.background_word | escape }}</span><span class="pp-tag">{{ section.settings.eyebrow | escape }}</span><h2>{{ section.settings.heading | escape }}</h2><div data-testimonials>{% for block in section.blocks %}<figure class="pp-quote-slide" {% unless forloop.first %}hidden{% endunless %} {{ block.shopify_attributes }}><blockquote class="pp-quote-text">{{ block.settings.quote | escape }}</blockquote><figcaption class="pp-quote-author"><strong>{{ block.settings.author | escape }}</strong></figcaption></figure>{% endfor %}{% if section.blocks.size > 1 %}<div class="pp-slider-btns"><button type="button" data-quote-step="-1" aria-label="{{ 'paws_play.previous_testimonial' | t }}">←</button><button type="button" data-quote-step="1" aria-label="{{ 'paws_play.next_testimonial' | t }}">→</button></div>{% endif %}</div></div></div></section>
+<div class="pp-section-shell color-{{ section.settings.color_scheme }} gradient">
+  <section class="pp-section-flush">
+    <div class="pp-container pp-quote-section">
+      <div class="pp-quote-media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: widths: '360, 540, 800, 1200', sizes: '(max-width: 749px) calc(100vw - 40px), (max-width: 1200px) 45vw, 520px', class: 'pp-quote-img', loading: 'lazy' }}
+        {% else %}
+          <img src="{{ 'pp-editorial-3.jpg' | asset_url }}" alt="Happy pet" class="pp-quote-img" width="1000" height="1509" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="pp-quote-body">
+        {% if section.settings.background_word != blank %}<span class="pp-quote-word" aria-hidden="true">{{ section.settings.background_word | escape }}</span>{% endif %}
+        {% if section.settings.eyebrow != blank %}<span class="pp-tag">{{ section.settings.eyebrow | escape }}</span>{% endif %}
+        <h2>{{ section.settings.heading | escape }}</h2>
+        <div data-testimonials>
+          {% for block in section.blocks %}
+            <figure class="pp-quote-slide" {% unless forloop.first %}hidden{% endunless %} {{ block.shopify_attributes }}>
+              <blockquote class="pp-quote-text">{{ block.settings.quote | escape }}</blockquote>
+              {% if block.settings.author != blank %}<figcaption class="pp-quote-author">{{ block.settings.author | escape }}</figcaption>{% endif %}
+            </figure>
+          {% endfor %}
+          {% if section.blocks.size > 1 %}
+            <div class="pp-slider-btns"><button type="button" data-quote-step="-1" aria-label="{{ 'paws_play.previous_testimonial' | t }}">&#8592;</button><button type="button" data-quote-step="1" aria-label="{{ 'paws_play.next_testimonial' | t }}">&#8594;</button></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 {% schema %}
 {
