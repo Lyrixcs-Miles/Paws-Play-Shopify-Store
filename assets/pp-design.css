@@ -47,8 +47,7 @@
 .pp-hero-dogs .pp-hero-tiny-puppy{width:32%;height:auto;right:0;bottom:0}
 @media(min-width:601px) and (max-width:989px){.pp-hero-dogs{left:44%;width:53%;bottom:22px}}
 @media(max-width:600px){.pp-hero-dogs{left:6%;width:86%;bottom:22px}.pp-hero-dogs .pp-hero-husky{width:72%;height:auto}.pp-hero-dogs .pp-hero-tiny-puppy{width:32%;height:auto;right:0}}
-/* Keep product prices and actions aligned when names wrap on smaller screens. */
-@media(max-width:749px){
+/* Keep product prices and actions aligned across every screen size. */
   .paws-play .product-grid > .grid__item{display:flex;align-items:stretch}
   .paws-play .product-grid > .grid__item > product-component{display:flex;flex:1;min-width:0}
   .paws-play .product-grid .product-card-wrapper{display:flex;flex:1;min-width:0;height:auto}
@@ -60,7 +59,6 @@
   .paws-play .product-grid .product-card-wrapper .card__information > .card-information{margin-top:auto}
   .paws-play .product-grid .product-card-wrapper .quick-add{margin-top:0;margin-bottom:0}
   .paws-play .product-grid .product-card-wrapper .quick-add__submit{min-height:44px}
-}
 @media(min-width:750px) and (max-width:1050px){.pp-promo-grid{gap:14px}.pp-promo-overlay{inset:auto 20px 18px;display:block}.pp-promo-copy{max-width:100%}.pp-promo-overlay h2{font-size:27px;max-width:260px}.pp-promo-overlay .pp-tag{margin-bottom:10px}.pp-promo-link{margin-top:8px}}
 @media(max-width:749px){.pp-section-shell .pp-promotions-section{padding-block:16px 36px}.pp-promo-grid{grid-template-columns:minmax(0,1fr);max-width:520px;gap:16px}.pp-promo{aspect-ratio:1.08;border-radius:12px}.pp-promo-word{font-size:clamp(110px,30vw,160px)}.pp-promo-overlay{inset:auto 22px 18px;display:block}.pp-promo-copy{max-width:100%}.pp-promo-overlay h2{font-size:29px;max-width:280px}.pp-promo-overlay .pp-tag{margin-bottom:11px}.pp-promo-link{margin-top:6px}}
 
