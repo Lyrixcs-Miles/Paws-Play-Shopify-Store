@@ -15,15 +15,15 @@
         "block0": {
           "type": "product",
           "settings": {
-            "product": "",
-            "label": "Metal bowl"
+            "product": "pet-shower-sprayer-scrubber",
+            "label": "Shower sprayer"
           }
         },
         "block1": {
           "type": "product",
           "settings": {
-            "product": "",
-            "label": "The leash"
+            "product": "pet-cooling-mat",
+            "label": "Cooling mat"
           }
         }
       },
@@ -37,9 +37,9 @@
         "heading": "The Ultimate Pet",
         "subheading": "Shopping Destination",
         "primary_label": "New arrivals",
-        "primary_url": "",
+        "primary_url": "/collections/all?sort_by=created-descending",
         "secondary_label": "All products",
-        "secondary_url": "",
+        "secondary_url": "/collections/all",
         "color_scheme": "",
         "background": "#d9d9d8"
       }
@@ -50,32 +50,32 @@
         "block0": {
           "type": "category",
           "settings": {
-            "title": "Beds & comfort",
-            "collection": "",
+            "title": "Home & comfort",
+            "collection": "home-comfort",
             "link": ""
           }
         },
         "block1": {
           "type": "category",
           "settings": {
-            "title": "Toys for pets",
-            "collection": "",
+            "title": "Shop for dogs",
+            "collection": "dogs",
             "link": ""
           }
         },
         "block2": {
           "type": "category",
           "settings": {
-            "title": "Walking accessories",
-            "collection": "",
+            "title": "Travel & car",
+            "collection": "travel-car",
             "link": ""
           }
         },
         "block3": {
           "type": "category",
           "settings": {
-            "title": "Pet supplies",
-            "collection": "",
+            "title": "Grooming & bath",
+            "collection": "grooming-bath",
             "link": ""
           }
         }
@@ -98,10 +98,10 @@
         "block0": {
           "type": "banner",
           "settings": {
-            "word": "new",
+            "word": "cosy",
             "label": "Home away from home",
-            "title": "New Collection of Beds",
-            "link": ""
+            "title": "Comfort for Every Corner of Home",
+            "link": "/collections/home-comfort"
           }
         },
         "block1": {
@@ -109,8 +109,8 @@
           "settings": {
             "word": "play",
             "label": "Active lifestyle",
-            "title": "Premium Walking Accessories",
-            "link": ""
+            "title": "Ready for Every Road Trip",
+            "link": "/collections/travel-car"
           }
         }
       },
@@ -158,7 +158,7 @@
           "settings": {
             "tag": "Care & wellness",
             "title": "Everyday Comfort",
-            "link": ""
+            "link": "/collections/home-comfort"
           }
         },
         "block1": {
@@ -166,7 +166,7 @@
           "settings": {
             "tag": "Care & wellness",
             "title": "Cat Essentials",
-            "link": ""
+            "link": "/collections/cats"
           }
         },
         "block2": {
@@ -174,7 +174,7 @@
           "settings": {
             "tag": "Care & wellness",
             "title": "Pet Wellness",
-            "link": ""
+            "link": "/collections/health-hygiene"
           }
         }
       },

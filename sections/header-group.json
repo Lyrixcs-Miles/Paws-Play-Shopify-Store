@@ -38,7 +38,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "pp_complete_navigation": true,
+        "pp_complete_navigation": false,
         "pp_blog": "",
         "logo_position": "middle-left",
         "mobile_logo_position": "left",
