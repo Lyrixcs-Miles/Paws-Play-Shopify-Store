@@ -74,7 +74,7 @@
           "settings": {
             "heading": "Can I return something?",
             "icon": "return",
-            "row_content": "<p>Yes. Unused items in their original packaging can be returned within 30 days. For pets' health and safety, we can't accept returns of food, treats or opened grooming products. Please contact us before sending anything back. See <a href=\"/pages/delivery\">Delivery &amp; Returns</a> for the full details.</p>"
+            "row_content": "<p>Yes. Unused items in their original packaging can be returned within 30 days. For pets' health and safety, grooming tools must be unused and in their original packaging. Please contact us before sending anything back. See <a href=\"/pages/delivery\">Delivery &amp; Returns</a> for the full details.</p>"
           }
         },
         "damaged": {
@@ -88,9 +88,9 @@
         "food": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How do I switch my pet to a new food?",
-            "icon": "serving_dish",
-            "row_content": "<p>A gradual change is usually gentlest on your pet's tummy. Mix a little of the new food into their usual food and slowly increase the amount over several days. Follow the feeding guide on the pack, and ask your vet if your pet has a sensitive stomach or a health condition.</p>"
+            "heading": "Do you sell pet food or treats?",
+            "icon": "check_mark",
+            "row_content": "<p>No. Our range focuses on toys, beds, walking accessories, grooming tools and other reusable pet essentials. We do not sell pet food, treats, supplements or other consumables.</p>"
           }
         },
         "toys": {
