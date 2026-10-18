@@ -1,18 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pp-hero",
-      "settings": {},
       "blocks": {
         "block0": {
           "type": "product",
           "settings": {
+            "product": "",
             "label": "Metal bowl"
           }
         },
         "block1": {
           "type": "product",
           "settings": {
+            "product": "",
             "label": "The leash"
           }
         }
@@ -20,37 +30,53 @@
       "block_order": [
         "block0",
         "block1"
-      ]
+      ],
+      "settings": {
+        "background_text": "pet store",
+        "intro": "Our mission is simple: to help pets live healthier, happier lives while making pet care easier and enjoyable for their families.",
+        "heading": "The Ultimate Pet",
+        "subheading": "Shopping Destination",
+        "primary_label": "New arrivals",
+        "primary_url": "",
+        "secondary_label": "All products",
+        "secondary_url": "",
+        "color_scheme": "",
+        "background": "#d9d9d8"
+      }
     },
     "categories": {
       "type": "pp-categories",
-      "settings": {
-        "eyebrow": "Find the perfect products",
-        "heading": "Shop by Category"
-      },
       "blocks": {
         "block0": {
           "type": "category",
           "settings": {
-            "title": "Dry & wet food"
+            "title": "Dry & wet food",
+            "collection": "",
+            "link": ""
           }
         },
         "block1": {
           "type": "category",
           "settings": {
-            "title": "Toys for pets"
+            "title": "Toys for pets",
+            "collection": "",
+            "link": ""
           }
         },
         "block2": {
           "type": "category",
           "settings": {
-            "title": "Walking accessories"
+            "title": "Walking accessories",
+            "collection": "",
+            "link": ""
           }
         },
         "block3": {
           "type": "category",
           "settings": {
-            "title": "Pet supplies"
+            "title": "Pet supplies",
+            "collection": "",
+            "link": ""
           }
         }
       },
@@ -59,81 +85,96 @@
         "block1",
         "block2",
         "block3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Find the perfect products",
+        "heading": "Shop by Category",
+        "color_scheme": ""
+      }
     },
     "promotions": {
       "type": "pp-promotions",
-      "settings": {},
       "blocks": {
         "block0": {
           "type": "banner",
           "settings": {
-            "title": "New Collection of Beds",
             "word": "new",
-            "label": "Home away from home"
+            "label": "Home away from home",
+            "title": "New Collection of Beds",
+            "link": ""
           }
         },
         "block1": {
           "type": "banner",
           "settings": {
-            "title": "Premium Walking Accessories",
             "word": "play",
-            "label": "Active lifestyle"
+            "label": "Active lifestyle",
+            "title": "Premium Walking Accessories",
+            "link": ""
           }
         }
       },
       "block_order": [
         "block0",
         "block1"
-      ]
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
     },
     "arrivals": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 4,
         "title": "Our Latest Arrivals",
         "heading_size": "h1",
-        "collection": "all",
-        "products_to_show": 8,
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
+        "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 72,
         "padding_bottom": 80
       }
     },
     "care": {
       "type": "pp-care-cards",
-      "settings": {
-        "eyebrow": "Pet care in action",
-        "heading": "Trusted by Pet Owners Who Want the Very Best"
-      },
       "blocks": {
         "block0": {
           "type": "card",
           "settings": {
-            "title": "Pet Nutrition"
+            "tag": "Care & wellness",
+            "title": "Pet Nutrition",
+            "link": ""
           }
         },
         "block1": {
           "type": "card",
           "settings": {
-            "title": "Cat Essentials"
+            "tag": "Care & wellness",
+            "title": "Cat Essentials",
+            "link": ""
           }
         },
         "block2": {
           "type": "card",
           "settings": {
-            "title": "Pet Wellness"
+            "tag": "Care & wellness",
+            "title": "Pet Wellness",
+            "link": ""
           }
         }
       },
@@ -141,14 +182,15 @@
         "block0",
         "block1",
         "block2"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Pet care in action",
+        "heading": "Trusted by Pet Owners Who Want the Very Best",
+        "color_scheme": ""
+      }
     },
     "testimonials": {
       "type": "pp-testimonials",
-      "settings": {
-        "eyebrow": "Happy customers",
-        "heading": "What Clients Say"
-      },
       "blocks": {
         "block0": {
           "type": "quote",
@@ -160,23 +202,30 @@
       },
       "block_order": [
         "block0"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Happy customers",
+        "heading": "What Clients Say",
+        "image": "shopify://shop_images/19e4b38d-8e63-4769-9dc7-c440a25d63e6.png",
+        "background_word": "woof",
+        "color_scheme": ""
+      }
     },
     "blog": {
       "type": "featured-blog",
       "settings": {
+        "blog": "news",
+        "post_limit": 3,
         "heading": "Our Latest News",
         "heading_size": "h1",
-        "post_limit": 3,
         "columns_desktop": 3,
-        "color_scheme": "scheme-1",
+        "show_view_all": true,
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "show_view_all": true,
+        "color_scheme": "scheme-1",
         "padding_top": 72,
-        "padding_bottom": 80,
-        "blog": "news"
+        "padding_bottom": 80
       }
     }
   },
