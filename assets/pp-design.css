@@ -38,6 +38,7 @@
 .pp-promo-link{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;min-height:44px;color:#fff;font-size:11px;line-height:1.4;white-space:nowrap;text-decoration:none}
 .pp-promo-link:hover{text-decoration:underline;text-underline-offset:4px}
 .pp-promo-link span{font-size:18px}
+.pp-cat .pp-category-art{left:6%;right:auto;bottom:8px;width:88%;height:62%;object-fit:contain;object-position:center bottom}
 /* Give the two cutouts a believable size relationship and a shared ground plane. */
 .pp-hero-dogs{left:34%;width:34%;bottom:22px}
 .pp-hero-dogs::before{content:"";position:absolute;left:4%;right:0;bottom:-8px;height:22px;background:radial-gradient(ellipse,rgba(61,49,40,.16),transparent 68%);pointer-events:none}
