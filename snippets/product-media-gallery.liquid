@@ -237,7 +237,7 @@
               aria-controls="GalleryViewer-{{ section.id }}"
               aria-describedby="{{ thumbnail_id }}"
             >
-              {{
+              {% capture gallery_thumb_art %}{% render 'pp-product-gallery-asset', product: product, media: featured_media %}{% endcapture %}{% assign gallery_thumb_art = gallery_thumb_art | strip %}{% if gallery_thumb_art != blank %}<img src="{{ gallery_thumb_art | asset_img_url: '208x' }}" alt="{{ product.title | escape }}" id="{{ thumbnail_id }}" width="1254" height="1254" loading="lazy">{% else %}{{
                 featured_media.preview_image
                 | image_url: width: 416
                 | image_tag:
@@ -246,8 +246,7 @@
                   widths: '54, 74, 104, 162, 208, 324, 416',
                   id: thumbnail_id,
                   alt: featured_media.alt
-                | escape
-              }}
+}}{% endif %}
             </button>
           </li>
         {%- endif -%}
@@ -299,7 +298,7 @@
                 aria-controls="GalleryViewer-{{ section.id }}"
                 aria-describedby="{{ thumbnail_id }}"
               >
-                {{
+                {% capture gallery_thumb_art %}{% render 'pp-product-gallery-asset', product: product, media: media %}{% endcapture %}{% assign gallery_thumb_art = gallery_thumb_art | strip %}{% if gallery_thumb_art != blank %}<img src="{{ gallery_thumb_art | asset_img_url: '208x' }}" alt="{{ product.title | escape }}" id="{{ thumbnail_id }}" width="1254" height="1254" loading="lazy">{% else %}{{
                   media.preview_image
                   | image_url: width: 416
                   | image_tag:
@@ -308,8 +307,7 @@
                     widths: '54, 74, 104, 162, 208, 324, 416',
                     id: thumbnail_id,
                     alt: media.alt
-                  | escape
-                }}
+}}{% endif %}
               </button>
             </li>
           {%- endunless -%}

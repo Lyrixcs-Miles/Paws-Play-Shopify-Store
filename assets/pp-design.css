@@ -38,6 +38,7 @@
 .pp-promo-link{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;min-height:44px;color:#fff;font-size:11px;line-height:1.4;white-space:nowrap;text-decoration:none}
 .pp-promo-link:hover{text-decoration:underline;text-underline-offset:4px}
 .pp-promo-link span{font-size:18px}
+.paws-play .product__media img.pp-page-product-cutout{object-fit:contain;background:#fff}
 .paws-play .product-card-wrapper .media > img.pp-preview-cutout{object-fit:contain;background:#fff}
 .pp-cat .pp-category-art{left:6%;right:auto;bottom:8px;width:88%;height:62%;object-fit:contain;object-position:center bottom}
 /* Give the two cutouts a believable size relationship and a shared ground plane. */

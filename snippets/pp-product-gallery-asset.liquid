@@ -1,0 +1,11 @@
+{% doc %}
+Returns the curated image asset for a product's default lead gallery media.
+Other gallery and variant media retain their original photographs.
+@param {product} product - Current product
+@param {media} media - Gallery media being rendered
+{% enddoc %}
+{%- assign lead_media = product.variants.first.featured_media | default: product.featured_media -%}
+{%- if media.media_type == 'image' and media.id == lead_media.id -%}
+  {%- render 'pp-product-preview-asset', product: product -%}
+{%- endif -%}
+

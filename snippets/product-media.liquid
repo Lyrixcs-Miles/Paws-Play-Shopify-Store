@@ -14,7 +14,12 @@
   %}
 {% endcomment %}
 
+{%- capture page_product_art -%}{%- render 'pp-product-gallery-asset', product: product, media: media -%}{%- endcapture -%}
+{%- assign page_product_art = page_product_art | strip -%}
 {%- if media.media_type == 'image' -%}
+  {% if page_product_art != blank %}
+    <img class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}" src="{{ page_product_art | asset_img_url: '1254x' }}" alt="{{ product.title | escape }}" width="1254" height="1254" loading="lazy" data-media-id="{{ media.id }}">
+  {% else %}
   <img
     class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
     srcset="
@@ -36,6 +41,7 @@
     height="{{ 1100 | divided_by: media.preview_image.aspect_ratio | ceil }}"
     data-media-id="{{ media.id }}"
   >
+  {% endif %}
 {%- else -%}
   {%- if media.media_type == 'model' -%}
     <div class="product-media-modal__model" data-media-id="{{ media.id }}">
