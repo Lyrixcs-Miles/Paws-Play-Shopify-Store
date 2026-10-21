@@ -41,3 +41,7 @@ shopify.cmd theme package
 `UPSTREAM.md` records the starter and initialization command. `LICENSE.md` preserves Shopify's upstream license. The parent `tools/rebuild-on-dawn.cjs` is a one-time migration script; rerunning it resets theme files and should not be used after custom edits.
 
 The theme is prepared locally and packaged for upload. Store rendering, payments, checkout, and app compatibility still need testing in a Shopify development preview.
+
+## Full project documentation
+
+See [the documentation index](docs/README.md) for the workspace inventory, theme architecture, development and release workflow, product draft/publication history, imagery and parent tooling. Store state in these guides is explicitly dated; it has not been freshly audited as part of documentation work.
